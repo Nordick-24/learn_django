@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewsport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale">
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+</head>
+<body>
+	<aside>
+		 <img src="https://www.svgrepo.com/show/220417/laptop.svg" alt="alternatetext"> 
+		<span class="logo">djansite</span>
+		<h3>Units<h3>
+		<ul>
+			<a href="{% url 'home' %}"><li>Capital</li></a>
+			<a href="{% url 'about' %}"><li>About</li></a>
+			<a href="{% url 'docker' %}"><li>Docker</li></a>
+		</ul>
+	</aside>
+	<main>
+	{% block content %}
+	{% endblock %}
+	</main>
+</body>
+</html>
